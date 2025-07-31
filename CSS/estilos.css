@@ -135,13 +135,26 @@ body {
 .portfolio-section { padding: 5rem 0; }
 .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 .project-card { position: relative; background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: 2rem; text-align: center; transition: transform 0.3s ease; overflow: hidden; }
-.project-card::before { content: ''; position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); width: 0; height: 0; background: radial-gradient(circle closest-side, var(--color-accent-primary), transparent); border-radius: 50%; opacity: 0; transition: width 0.4s, height 0.4s, opacity 0.4s; }
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle closest-side, var(--color-accent-primary), transparent);
+    border-radius: 50%;
+    opacity: 0;
+    transition: width 0.4s, height 0.4s, opacity 0.4s;
+    pointer-events: none; /* 💥 Esto permite que los clics pasen a los elementos debajo */
+}
 .project-card:hover::before { width: 400px; height: 400px; opacity: 0.1; }
 .project-card h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--color-text); }
 .project-card p { color: var(--color-muted); margin-bottom: 1.5rem; }
 .project-tech-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 .project-tech-tags span { background-color: var(--color-border); color: var(--color-muted); font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 99px; }
-.project-link { color: var(--color-accent-secondary); text-decoration: none; font-weight: 600; }
+.project-link { color: var(--color-accent-secondary); text-decoration: none; font-weight: 600; position: relative; z-index: 2; pointer-events: auto}
 
 /* ================= STACK SECTION ================== */
 .stack-section { padding: 5rem 0; background-color: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }

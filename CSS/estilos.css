@@ -156,6 +156,20 @@ body {
 .project-tech-tags span { background-color: var(--color-border); color: var(--color-muted); font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 99px; }
 .project-link { color: var(--color-accent-secondary); text-decoration: none; font-weight: 600; position: relative; z-index: 2; pointer-events: auto}
 
+
+/* Añadir esto en tu CSS */
+.project-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Esto asegura que los enlaces sigan siendo clickeables
+       a través del efecto de hover de la tarjeta */
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+
 /* ================= STACK SECTION ================== */
 .stack-section { padding: 5rem 0; background-color: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 .stack-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; }
